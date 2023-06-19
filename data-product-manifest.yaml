@@ -1,4 +1,4 @@
-version: 1.0.0
+version: 0.1.0
 alias: Load final PMS State
 discoveryPort:
   name: PMS
@@ -15,7 +15,7 @@ discoveryPort:
   createdTs: ""
   updatedTs: ""
 inputPorts:
-  - alias: PMS$Transactions$1
+  - alias: PMSTransactions1
     description: PMS Transactions
     tags: []
     extra: {}
@@ -34,7 +34,7 @@ inputPorts:
       advanceOptions:
         delimiter: ","
         header: false
-  - alias: PMS$Master$1
+  - alias: PMSMaster1
     description: PMS Transactions
     tags: []
     extra: {}
@@ -68,10 +68,10 @@ productState:
       changeTrackColumns: []
       timeTrackColumn: ""
 transformation:
-  - alias: Join$1
+  - alias: Join1
     type: ""
     description: Join PMS Master and transaction
-  - alias: Select$Columns$1
+  - alias: SelectColumns1
     type: ""
     description: Select required columns for joined PMS
 controlPort:
