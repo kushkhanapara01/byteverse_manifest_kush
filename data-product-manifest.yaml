@@ -1,0 +1,78 @@
+version: 1.0.0
+alias: ""
+discoveryPort:
+  name: PMS
+  description: ""
+  category: ""
+  image: ""
+  autofillUserinfo: ""
+  tags: []
+  extra: {}
+  createdBy:
+    name: ""
+    userid: ""
+    email: ""
+  createdTs: ""
+  updatedTs: ""
+inputPorts:
+  - alias: PMS$Transactions$1
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    incrementalStrategy: {}
+    filter: ""
+    projection: []
+    entity:
+      createEntity: true
+      path: s3://bp-spark-sql-library-test-acc/PMS_Transaction_Data.csv
+      variables:
+        - key: ""
+          value: ""
+      advanceOptions:
+        delimiter: ","
+        header: false
+  - alias: PMS$Master$1
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    incrementalStrategy: {}
+    filter: ""
+    projection: []
+    entity:
+      createEntity: true
+      path: s3://bp-spark-sql-library-test-acc/PMS_Transaction_Data.csv
+      variables:
+        - key: ""
+          value: ""
+      advanceOptions:
+        delimiter: ","
+        header: false
+productState:
+  alias: ""
+  refreshInterval: ""
+  logicalSchemaUrn: ""
+  retentionVersions: ""
+  updateStrategy: ""
+  logicalSchema: ""
+  productStoreState:
+    enforceSchemaMethod: ""
+  updateStrategyOptions:
+    - entityRef: ""
+      uniqueKeyColumns: []
+      changeTrackColumns: []
+      timeTrackColumn: ""
+transformation:
+  - alias: Join$1
+    type: ""
+    description: Join PMS Master and transaction
+  - alias: Select$Columns$1
+    type: ""
+    description: Select required columns for joined PMS
+controlPort:
+  dataQualityCheck: {}
