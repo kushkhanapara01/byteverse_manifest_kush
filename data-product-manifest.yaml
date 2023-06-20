@@ -1,0 +1,82 @@
+version: 0.1.0
+jobId: "1"
+jobName: PMS
+jobType: Source Aligned Data Product
+alias: Load final PMS State
+discoveryPort:
+  name: PMS
+  description: ""
+  category: ""
+  image: ""
+  autofillUserinfo: ""
+  tags: []
+  extra: {}
+  createdBy:
+    name: ""
+    userid: ""
+    email: ""
+  createdTs: ""
+  updatedTs: ""
+inputPorts:
+  - alias: PMS_Transactions_1
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    incrementalStrategy: {}
+    filter: ""
+    projection: []
+  - alias: PMS_Master_1
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    incrementalStrategy: {}
+    filter: ""
+    projection: []
+productState:
+  alias: Load final PMS State
+  refreshInterval: ""
+  logicalSchemaUrn: ""
+  retentionVersions: ""
+  updateStrategy: append
+  logicalSchema: ""
+  productStoreState:
+    enforceSchemaMethod: Warning
+  updateStrategyOptions:
+    - entityRef: ""
+      uniqueKeyColumns: []
+      changeTrackColumns: []
+      timeTrackColumn: ""
+  isProfilingEnabled: true
+transformation:
+  - alias: Join_1
+    type: ""
+    description: Join PMS Master and transaction
+  - alias: Select_Columns_1
+    type: ""
+    description: Select required columns for joined PMS
+controlPort:
+  dataQualityCheck:
+    tableId:
+      stateManagement:
+        checks: 2865
+    enable:
+      stateManagement:
+        checks: true
+    RecordCountCheck:
+      stateManagement:
+        checks:
+          expression: ">="
+          number: 227
+    NullValueCheck:
+      stateManagement:
+        checks:
+          - column: NEName
+            expression: ==
+            number: 100
+            stepsToFix: Fix on your own
