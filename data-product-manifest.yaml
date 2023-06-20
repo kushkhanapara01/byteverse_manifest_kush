@@ -8,17 +8,13 @@ discoveryPort:
   regulatoryFields:
     dataPrivacy: public
     customerInfo: nonPII
-    dataOrigin: machine
-    monetaryInfo: nonFinancial
-  category: ""
+    dataOrigin: machineGenerated
+    monetaryInfo: nonFinancialData
+  function: abc
   image: https://google.com
   autofillUserinfo: ""
   tags: ['Tag1']
   extra: {}
-  createdBy:
-    name: abc
-    userid: "123"
-    email: abc@gmail.com
   createdTs: 1687281186
   updatedTs: 1687281186
 inputPorts:
@@ -73,6 +69,12 @@ transformation:
         tempViewName: pmstransaction
       - inputDataFrame: PMS$Master$1
         tempViewName: pmsmaster
+outputPort:
+  channels:
+    - channelType: REST-API
+      queryType: SQL
+    - channelType: JDBC
+      queryType: SQL
 controlPort:
   dataQualityCheck:
     tableId:
