@@ -70,7 +70,7 @@ transformation:
       - inputDataFrame: PMS$Master$1
         tempViewName: pmsmaster
 outputPort:
-  channels:
+  subscriptionChannels:
     - channelType: REST-API
       queryType: SQL
     - channelType: JDBC
