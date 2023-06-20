@@ -1,7 +1,4 @@
 version: 0.1.0
-jobId: "1"
-jobName: PMS
-jobType: Source Aligned Data Product
 alias: Load_final_PMS_State
 discoveryPort:
   name: PMS
