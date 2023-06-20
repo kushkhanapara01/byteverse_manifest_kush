@@ -2,11 +2,18 @@ version: 0.1.0
 alias: Load_final_PMS_State
 discoveryPort:
   name: PMS_1
-  description: ""
+  shortDescription: ShortDescription
+  longDescription: LongDescriptionDescription
+  industryDomain: "inDomaiin"
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: machine
+    monetaryInfo: nonFinancial
   category: ""
   image: https://google.com
   autofillUserinfo: ""
-  tags: []
+  tags: ['Tag1']
   extra: {}
   createdBy:
     name: abc
