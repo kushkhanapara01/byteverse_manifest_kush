@@ -40,7 +40,7 @@ productState:
   alias: Load final PMS State
   refreshInterval: ""
   retentionVersions: ""
-  updateStrategy: SCD1
+  updateStrategy: append
   logicalSchema:
     properties:
       DNID:
@@ -57,11 +57,6 @@ productState:
         type: STRING
   productStoreState:
     enforceSchemaMethod: Warning
-  updateStrategyOptions:
-    entityRef: ""
-    uniqueKeyColumns: []
-    changeTrackColumns: []
-    timeTrackColumn: ""
   isProfilingEnabled: true
 transformation:
   - alias: Spark_SQL_1
