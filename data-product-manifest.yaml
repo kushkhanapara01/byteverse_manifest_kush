@@ -1,6 +1,6 @@
 version: 0.1.0
 jobId: "1"
-jobName: PMS
+jobName: PMS Test V2
 jobType: Source Aligned Data Product
 alias: Load_final_PMS_State_final
 discoveryPort:
