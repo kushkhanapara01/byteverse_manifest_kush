@@ -59,10 +59,10 @@ transformation:
     query: select DNID,DNName,NEName,InitTime,State,City from pmstransaction pmt
       left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
     references:
-      - alias: pmstransaction
-        sqlReference: PMS_Transactions_1
-      - alias: pmsmaster
-        sqlReference: PMS_Master_2
+      - alias: PMS_Transactions_1
+        sqlReference: pmstransaction
+      - alias: PMS_Master_2
+        sqlReference: pmsmaster
 controlPort:
   dataQualityRules:
     RecordCountCheck:
