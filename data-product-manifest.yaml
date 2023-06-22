@@ -22,12 +22,12 @@ inputPorts:
     filter: ""
     projection: []
   - alias: PMS_Master_2
-    description: PMS Transactions
+    description: PMS Master
     tags: []
     extra: {}
     syncType: pull
     type: s3-csv
-    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    dataSetUrn: urn:dv:dataset:79c7ffb6-9365-42b0-ba63-fc3f561a4e74
     filter: ""
     projection: []
 productState:
@@ -60,9 +60,9 @@ transformation:
       left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
     references:
       - alias: pmstransaction
-        sqlReference: PMS$Transactions$1
+        sqlReference: PMS_Transactions_1
       - alias: pmsmaster
-        sqlReference: PMS$Master$2
+        sqlReference: PMS_Master_2
 controlPort:
   dataQualityRules:
     tableId:
