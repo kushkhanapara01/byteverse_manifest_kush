@@ -32,7 +32,7 @@ inputPorts:
     projection: []
 productState:
   alias: Load_final_PMS_State
-  refreshInterval: ""
+  refreshInterval: "0 0 * * *"
   retentionVersions: ""
   updateStrategy: append
   logicalSchema:
