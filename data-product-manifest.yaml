@@ -65,14 +65,6 @@ transformation:
         sqlReference: PMS_Master_2
 controlPort:
   dataQualityRules:
-    tableId:
-      productState:
-        checks: 2865
-        referenceAlias: Load_final_PMS_State
-    enable:
-      productState:
-        checks: true
-        referenceAlias: Load_final_PMS_State
     RecordCountCheck:
       productState:
         expression: ">="
