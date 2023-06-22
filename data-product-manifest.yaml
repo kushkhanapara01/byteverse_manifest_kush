@@ -4,7 +4,7 @@ jobName: PMS Test V2
 jobType: Source Aligned Data Product
 alias: Load_final_PMS_State_final
 discoveryPort:
-  name: PMS
+  name: PMS Test V2
   description: ""
   category: ""
   image: https://google.com
