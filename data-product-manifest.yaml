@@ -1,0 +1,85 @@
+version: 0.1.0
+jobId: "1"
+jobName: PMS
+jobType: Source Aligned Data Product
+alias: Load_final_PMS_State
+discoveryPort:
+  name: PMS
+  description: ""
+  category: ""
+  image: https://google.com
+  autofillUserinfo: ""
+  tags: []
+  extra: {}
+inputPorts:
+  - alias: PMS_Transactions_1
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    filter: ""
+    projection: []
+  - alias: PMS_Master_2
+    description: PMS Transactions
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    filter: ""
+    projection: []
+productState:
+  alias: Load_final_PMS_State
+  refreshInterval: ""
+  retentionVersions: ""
+  updateStrategy: append
+  logicalSchema:
+    properties:
+      DNID:
+        type: STRING
+      DNName:
+        type: STRING
+      NEName:
+        type: STRING
+      InitTime:
+        type: STRING
+      State:
+        type: STRING
+      City:
+        type: STRING
+  productStoreState:
+    enforceSchemaMethod: Warning
+  isProfilingEnabled: true
+transformation:
+  - alias: Spark_SQL_1
+    type: SQL
+    description: Join transaction and master
+    query: select DNID,DNName,NEName,InitTime,State,City from pmstransaction pmt
+      left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
+    references:
+      - alias: pmstransaction
+        sqlReference: PMS$Transactions$1
+      - alias: pmsmaster
+        sqlReference: PMS$Master$2
+controlPort:
+  dataQualityRules:
+    tableId:
+      stateManagement:
+        checks: 2865
+    enable:
+      stateManagement:
+        checks: true
+    RecordCountCheck:
+      stateManagement:
+        checks:
+          expression: ">="
+          number: 227
+    NullValueCheck:
+      stateManagement:
+        checks:
+          - column: NEName
+            expression: ==
+            number: 100
+            stepsToFix: Fix on your own
