@@ -1,10 +1,10 @@
 version: 0.1.0
 jobId: "1"
-jobName: PMS Test V4
+jobName: PMS Test V6
 jobType: Source Aligned Data Product
-alias: Load_final_PMS_State_final_v5
+alias: Load_final_PMS_State_final_v6
 discoveryPort:
-  name: PMS Test V5
+  name: PMS Test V6
   description: ""
   category: ""
   image: https://google.com
@@ -17,17 +17,8 @@ inputPorts:
     tags: []
     extra: {}
     syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
-    filter: ""
-    projection: []
-  - alias: PMS_Master_1
-    description: PMS Master
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:79c7ffb6-9365-42b0-ba63-fc3f561a4e74
+    type: 'dataproduct'
+    dataSetUrn: urn:dv:dataproduct:5f20f51a-a11c-4490-91c1-114bbd479822
     filter: ""
     projection: []
 productState:
@@ -56,20 +47,17 @@ transformation:
   - alias: Spark_SQL_1
     type: SQL
     description: Join transaction and master
-    query: select DNID,DNName,NEName,InitTime,State,City from pmstransaction pmt
-      left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
+    query: select * from pmstransaction
     references:
       - alias: PMS_Transactions_1
         sqlReference: pmstransaction
-      - alias: PMS_Master_1
-        sqlReference: pmsmaster
 controlPort:
   dataQualityRules:
     RecordCountCheck:
       productState:
         expression: "<="
         number: 227
-        referenceAlias: Load_final_PMS_State_final_v5
+        referenceAlias: Load_final_PMS_State_final_v6
     NullValueCheck:
       productState:
         checks:
@@ -77,7 +65,7 @@ controlPort:
             expression: ==
             number: 1
             stepsToFix: Fix on your own
-        referenceAlias: Load_final_PMS_State_final_v5
+        referenceAlias: Load_final_PMS_State_final_v6
 outputPort:
   subscriptionChannels:
     - channelType: JDBC
