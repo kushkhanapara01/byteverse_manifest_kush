@@ -67,7 +67,7 @@ controlPort:
   dataQualityRules:
     RecordCountCheck:
       productState:
-        expression: ">="
+        expression: "<="
         number: 227
         referenceAlias: Load_final_PMS_State_final_v3
     NullValueCheck:
@@ -75,7 +75,7 @@ controlPort:
         checks:
           - column: NEName
             expression: ==
-            number: 100
+            number: 1
             stepsToFix: Fix on your own
         referenceAlias: Load_final_PMS_State_final_v3
 outputPort:
