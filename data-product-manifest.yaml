@@ -18,7 +18,7 @@ inputPorts:
     extra: {}
     syncType: pull
     type: 'dataproduct'
-    dataSetUrn: urn:dv:dataproduct:5f20f51a-a11c-4490-91c1-114bbd479822
+    dataProductUrn: urn:dv:dataproduct:5f20f51a-a11c-4490-91c1-114bbd479822
     filter: ""
     projection: []
 productState:
