@@ -2,15 +2,22 @@ version: 0.1.0
 jobId: "1"
 jobName: PMS
 jobType: Source Aligned Data Product
-alias: Load_final_PMS_State_v7
+alias: Trial End to End 1
 discoveryPort:
-  name: PMS Aditya V7
-  description: ""
+  name: PMS Job1
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
+  shortDescription: ShortDescription
+  longDescription: LongLongLongDescriptionDescription
+  industryDomain: "PMS"
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: machineGenerated
+    monetaryInfo: nonFinancialData
 inputPorts:
   - alias: PMS_Transactions_1
     description: PMS Transactions
