@@ -2,7 +2,7 @@ version: 0.1.0
 jobId: "1"
 jobName: PMS
 jobType: Source Aligned Data Product
-alias: Trial End to End 1
+alias: Trial_End_to_End_1
 discoveryPort:
   name: PMS Job1
   category: ""
@@ -13,6 +13,7 @@ discoveryPort:
   shortDescription: ShortDescription
   longDescription: LongLongLongDescriptionDescription
   industryDomain: "PMS"
+  function: "PMS"
   regulatoryFields:
     dataPrivacy: public
     customerInfo: nonPII
@@ -76,7 +77,7 @@ controlPort:
       productState:
         expression: ">="
         number: 227
-        referenceAlias: Load_final_PMS_State_v7
+        referenceAlias: Trial_End_to_End_1
     NullValueCheck:
       productState:
         checks:
@@ -84,7 +85,7 @@ controlPort:
             expression: ==
             number: 100
             stepsToFix: Fix on your own
-        referenceAlias: Load_final_PMS_State_v7
+        referenceAlias: Trial_End_to_End_1
 outputPort:
   subscriptionChannels:
     - channelType: JDBC
