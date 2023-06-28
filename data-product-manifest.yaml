@@ -14,7 +14,7 @@ discoveryPort:
   longDescription: LongLongLongDescriptionDescription
   industryDomain: "PMS"
   function: ["PMS"]
-  domain: 'PMS'
+  domain: ['PMS']
   regulatoryFields:
     dataPrivacy: public
     customerInfo: nonPII
@@ -26,15 +26,15 @@ inputPorts:
     tags: []
     extra: {}
     syncType: pull
-    type: s3-parquet
+    type: s3-csv
     connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
-    dataSet: ''
+    dataSet: {}
     dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
     filter: ""
     projection: []
 productState:
   alias: Load_final_PMS_State
-  refreshInterval: "0 0 * * *"
+  updateSchedule: "0 0 * * *"
   retentionVersions: ""
   updateStrategy: append
   logicalSchema:
