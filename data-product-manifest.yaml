@@ -13,7 +13,8 @@ discoveryPort:
   shortDescription: ShortDescription
   longDescription: LongLongLongDescriptionDescription
   industryDomain: "PMS"
-  function: "PMS"
+  function: ["PMS"]
+  domain: 'PMS'
   regulatoryFields:
     dataPrivacy: public
     customerInfo: nonPII
@@ -25,17 +26,10 @@ inputPorts:
     tags: []
     extra: {}
     syncType: pull
-    type: s3-csv
+    type: s3-parquet
+    connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
+    dataSet: ''
     dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
-    filter: ""
-    projection: []
-  - alias: PMS_Master_2
-    description: PMS Master
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:79c7ffb6-9365-42b0-ba63-fc3f561a4e74
     filter: ""
     projection: []
 productState:
@@ -62,7 +56,7 @@ productState:
   isProfilingEnabled: true
 transformation:
   - alias: Spark_SQL_1
-    type: SQL
+    type: sql
     description: Join transaction and master
     query: select DNID,DNName,NEName,InitTime,State,City from pmstransaction pmt
       left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
@@ -88,5 +82,5 @@ controlPort:
         referenceAlias: Trial_End_to_End_1
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
-      queryType: SQL
+    - channelType: jdbc
+      queryType: sql
