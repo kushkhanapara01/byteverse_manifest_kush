@@ -1,0 +1,139 @@
+version: 0.1.0
+alias: main_branch_local_20230621
+discoveryPort:
+  name: 20230621 main branch local
+  shortDescription: Madrid house rental
+  longDescription: The data product provides average house rental rates in Madrid by house
+    type (Pisos, Aticos, Duplex, etc)
+  category: customer
+  image: http://google.com
+  autofillUserinfo: true
+  tags:
+    - Madrid
+    - House Rental
+  domain: ["Real estate"]
+  function: ["Analysis"]
+  versionInformation: "0.0.1"
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: humanGenerated
+    monetaryInfo: financialData
+inputPorts:
+  - alias: usersS3_input_port
+    description: string
+    tags: []
+    extra: {}
+    syncType: pull
+    connectionUrn: urn:dv:connection:54d537f8-f22a-49b8-a4df-65e3444be979
+    type: s3-csv
+    dataSet:
+      createEntity: true
+      name: houses_Madrid.parquet
+      path: s3a://dp-input-bucket/test/houses_Madrid.parquet
+      entityFilterPatternMatch: "*"
+      sourceSchemaUrn: urn:dv:schema:9d4716d4
+      projectSchemaUrn: urn:dv:schema:9d4716d4
+      fileFormat: parquet
+      delimiter: "|"
+      filter: subtitle != ''
+      processingTimeColumn:
+        - processing_time
+      actualTimeColumn:
+        - processing_time
+      projection:
+        - id
+        - title
+        - subtitle
+        - sq_mt_built
+        - sq_mt_useful
+        - rent_price
+        - rent_price_by_area
+        - buy_price
+        - buy_price_by_area
+  - alias: data_product_as_source
+    description: string
+    tags: []
+    extra: {}
+    syncType: pull
+    type: dataproduct
+    dataProductUrn: urn:dv:dataproduct:ffee3919-8683-46f8-add8-f8df2d0c6c43
+    filter: ""
+    projection:
+      - id
+      - name
+      - marks
+      - modified
+productState:
+  alias: users_count_by_gender
+  updateType: on-demand
+  updateSchedule: 00 10 * * *
+  retentionVersions: "10"
+  updateStrategy: scd2
+#   logicalSchemaUrn: urn:dv:schema:263deedb-916b-40f2-9740-6ee02ce9b8b9
+  logicalSchema:
+    type: object
+    properties:
+      name:
+        type: string
+      gender:
+        type: string
+        enum: [Male, Female]
+      age:
+        type: number
+      city:
+        type: string
+      zipcode:
+        type: number
+      some_prop:
+        type: string
+    required: [name, age, city]
+  updateStrategyOptions:
+    entityRef: ${urn:dv:datasource:6d4714c3}:1
+    uniqueKeyColumns:
+      - customer_id
+    timeTrackingColumn: change_year
+    changeTrackingColumns:
+      - cust_title_desc
+      - cust_birthday
+      - cust_nationality
+transformation:
+  - query: select * from usersS3
+    alias: asasfasdaf
+    type: sql
+outputPort:
+  subscriptionChannels:
+  - channelType: jdbc
+    queryType: sql
+  - channelType: rest-api
+    queryType: sql
+controlPort:
+  dataQualityRules:
+    RecordCountCheck:
+      inputPort:
+        - referenceAlias: usersS3_input_port
+          expression: '=='
+          number: 100
+      stateManagement:
+        referenceAlias: users_count_by_gender
+        expression: ==
+        number: 100
+    NullValueCheck:
+      inputPort:
+        - referenceAlias: usersS3_input_port
+          checks:
+            - column: amount
+              expression: ">="
+              number: 0.9
+            - column: card_number
+              expression: ">="
+              number: 0.95
+            - column: auth_code
+              expression: ">="
+              number: 0.9
+      stateManagement:
+        referenceAlias: users_count_by_gender
+        checks:
+          - column: amount
+            expression: ">="
+            number: 0.9
