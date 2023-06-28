@@ -36,9 +36,18 @@ inputPorts:
 productState:
   alias: Load_final_PMS_State
   updateSchedule: "0 0 * * *"
-  updateType: 'xyz'
+  updateType: 'on-demand'
   retentionVersions: ""
-  updateStrategy: append
+  updateStrategy: scd1
+  updateStrategyOptions:
+    entityRef: ${urn:dv:datasource:6d4714c3}:1
+    uniqueKeyColumns:
+      - customer_id
+    timeTrackingColumn: change_year
+    changeTrackingColumns:
+      - cust_title_desc
+      - cust_birthday
+      - cust_nationality
   logicalSchema:
     properties:
       DNID:
