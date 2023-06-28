@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "1"
 jobName: PMS
 jobType: Source Aligned Data Product
-alias: Trial_End_to_End_1_test1
+alias: Trial_End_to_End_1_test11
 discoveryPort:
-  name: PMS Job1 Test1
+  name: PMS Job1 Test11
   category: ""
   image: https://google.com
   autofillUserinfo: ""
