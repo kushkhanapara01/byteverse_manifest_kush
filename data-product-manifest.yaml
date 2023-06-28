@@ -28,13 +28,15 @@ inputPorts:
     syncType: pull
     type: s3-csv
     connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
-    dataSet: {}
+    dataSet: 
+      path: 'xyz'
     dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
     filter: ""
     projection: []
 productState:
   alias: Load_final_PMS_State
   updateSchedule: "0 0 * * *"
+  updateType: 'xyz'
   retentionVersions: ""
   updateStrategy: append
   logicalSchema:
