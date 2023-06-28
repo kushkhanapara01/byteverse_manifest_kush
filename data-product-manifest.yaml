@@ -43,6 +43,7 @@ productState:
   refreshInterval: "0 0 * * *"
   retentionVersions: ""
   updateStrategy: append
+  stateStoreType: iceberg
   logicalSchema:
     properties:
       DNID:
