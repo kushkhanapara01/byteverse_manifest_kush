@@ -1,0 +1,52 @@
+version: 0.1.0
+jobId: "9"
+jobName: Weather API Curated Test
+jobType: Curated Data Product
+alias: Store_final_state
+discoveryPort:
+  name: Weather API Curated Test
+  description: ""
+  category: ""
+  image: https://google.com
+  autofillUserinfo: ""
+  tags: []
+  extra: {}
+inputPorts:
+  - alias: Load_final_state_1
+    description: ""
+    tags: []
+    extra: {}
+    syncType: pull
+    type: dataproduct
+    dataSetUrn: ""
+    filter: ""
+    projection:
+      - ""
+    dataProductUrn: urn:dv:dataproduct:cec0f955-eb30-482e-90c4-aee8dec46c84
+    persistDataFrame: false
+productState:
+  alias: Store_final_state
+  refreshInterval: ""
+  retentionVersions: ""
+  updateStrategy: overwrite
+  logicalSchema: ""
+  enforceSchemaMethod: ""
+  enforceSchema: true
+  updateStrategyOptions: {}
+  isProfilingEnabled: false
+  tableName: weather_curated_dataproduct
+  stateStoreType: iceberg
+transformation:
+  - alias: Spark_SQL_1
+    type: SQL
+    description: Select all data
+    query: select * from weather
+    references:
+      - alias: Load_final_state_1
+        sqlReference: weather
+controlPort:
+  dataQualityRules: {}
+outputPort:
+  subscriptionChannels:
+    - channelType: JDBC
+      queryType: SQL
