@@ -21,7 +21,7 @@ inputPorts:
     dataSetUrn: ""
     filter: ""
     projection: []
-    dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
+    dataProductUrn: urn:dv:dataproduct:4a94ef6b-f495-4294-ad62-0779932f1949
     persistDataFrame: false
 productState:
   alias: Store_final_state
