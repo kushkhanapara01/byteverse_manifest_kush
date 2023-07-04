@@ -18,7 +18,6 @@ inputPorts:
     extra: {}
     syncType: pull
     type: dataproduct
-    dataSetUrn: ""
     filter: ""
     projection:
       - ""
