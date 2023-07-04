@@ -1,97 +1,56 @@
 version: 0.1.0
-jobId: "1"
-jobName: PMS
-jobType: Source Aligned Data Product
-alias: Trial_End_to_End_1
+jobId: "9"
+jobName: Weather API Curated Test
+jobType: Curated Data Product
+alias: Store_final_state
 discoveryPort:
-  name: PMS Job1
+  name: Weather API Curated Test
+  description: ""
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
-  shortDescription: ShortDescription
-  longDescription: LongLongLongDescriptionDescription
-  industryDomain: "PMS"
-  function: ["PMS"]
-  domain: ['PMS']
-  regulatoryFields:
-    dataPrivacy: public
-    customerInfo: nonPII
-    dataOrigin: machineGenerated
-    monetaryInfo: nonFinancialData
 inputPorts:
-  - alias: PMS_Transactions_1
-    description: PMS Transactions
+  - alias: Load_final_state_1
+    description: ""
     tags: []
     extra: {}
     syncType: pull
-    type: s3-csv
-    connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
-    dataSet: 
-      path: 'xyz'
-    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
+    type: dataproduct
+    dataSetUrn: ""
     filter: ""
     projection: []
+    dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
+    persistDataFrame: false
 productState:
-  alias: Load_final_PMS_State
-  updateSchedule: "0 0 * * *"
-  updateType: 'on-demand'
+  alias: Store_final_state
+  refreshInterval: ""
   retentionVersions: ""
-  updateStrategy: scd1
-  updateStrategyOptions:
-    entityRef: ${urn:dv:datasource:6d4714c3}:1
-    uniqueKeyColumns:
-      - customer_id
-    timeTrackingColumn: change_year
-    changeTrackingColumns:
-      - cust_title_desc
-      - cust_birthday
-      - cust_nationality
+  updateStrategy: overwrite
   logicalSchema:
     properties:
-      DNID:
+      a:
         type: STRING
-      DNName:
+      b:
         type: STRING
-      NEName:
-        type: STRING
-      InitTime:
-        type: STRING
-      State:
-        type: STRING
-      City:
-        type: STRING
-  productStoreState:
-    enforceSchemaMethod: Warning
-  isProfilingEnabled: true
+  enforceSchemaMethod: ""
+  enforceSchema: true
+  updateStrategyOptions: {}
+  isProfilingEnabled: false
+  tableName: weather_curated_dataproduct
+  stateStoreType: iceberg
 transformation:
   - alias: Spark_SQL_1
-    type: sql
-    description: Join transaction and master
-    query: select DNID,DNName,NEName,InitTime,State,City from pmstransaction pmt
-      left join pmsmaster pmm on pmt.nename = pmm.sap_id_name
+    type: SQL
+    description: Select all data
+    query: select * from weather
     references:
-      - alias: PMS_Transactions_1
-        sqlReference: pmstransaction
-      - alias: PMS_Master_2
-        sqlReference: pmsmaster
+      - alias: Load_final_state_1
+        sqlReference: weather
 controlPort:
-  dataQualityRules:
-    RecordCountCheck:
-      productState:
-        expression: ">="
-        number: 227
-        referenceAlias: Trial_End_to_End_1
-    NullValueCheck:
-      productState:
-        checks:
-          - column: NEName
-            expression: ==
-            number: 100
-            stepsToFix: Fix on your own
-        referenceAlias: Trial_End_to_End_1
+  dataQualityRules: {}
 outputPort:
   subscriptionChannels:
-    - channelType: jdbc
-      queryType: sql
+    - channelType: JDBC
+      queryType: SQL
