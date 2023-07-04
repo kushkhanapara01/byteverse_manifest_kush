@@ -14,6 +14,7 @@ discoveryPort:
 inputPorts:
   - alias: Load_final_state_1
     description: ""
+    type: dataproduct
     tags: []
     extra: {}
     syncType: pull
