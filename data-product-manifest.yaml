@@ -36,7 +36,6 @@ productState:
         type: STRING
   enforceSchemaMethod: ""
   enforceSchema: true
-  updateStrategyOptions: {}
   isProfilingEnabled: false
   tableName: weather_curated_dataproduct
   stateStoreType: iceberg
