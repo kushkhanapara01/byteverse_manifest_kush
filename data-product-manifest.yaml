@@ -27,7 +27,7 @@ productState:
   alias: Store_final_state
   refreshInterval: ""
   retentionVersions: ""
-  updateStrategy: overwrite
+  updateStrategy: Overwrite
   logicalSchema:
     properties:
       a:
