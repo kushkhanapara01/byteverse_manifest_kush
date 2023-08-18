@@ -1,0 +1,64 @@
+version: 0.1.0
+jobId: "660"
+jobName: Test_demo
+jobType: Source Aligned Data Product
+alias: ""
+discoveryPort:
+  name: Test_demo
+  description: ""
+  category: ""
+  image: https://google.com
+  autofillUserinfo: ""
+  tags: []
+  extra: {}
+  shortDescription: Short Description
+  longDescription: Long Long Long Description
+  industryDomain: ""
+  function: ""
+  regulatoryFields:
+    dataPrivacy: ""
+    customerInfo: ""
+    dataOrigin: ""
+    monetaryInfo: ""
+inputPorts:
+  - alias: test-data-set_1
+    description: test-data-set
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:d6c0a3ce-8b37-4831-b460-43df14ee7fa5
+    filter: ""
+    projection: []
+    dataProductUrn: ""
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: false
+productState:
+  alias: ""
+  refreshInterval: ""
+  retentionVersions: ""
+  updateStrategy: ""
+  logicalSchema: ""
+  enforceSchemaMethod: ""
+  enforceSchema: true
+  enableDataReconciliation: false
+  isProfilingEnabled: false
+  tableName: ""
+  stateStoreType: iceberg
+transformation:
+  - alias: Spark_SQL_1
+    type: SQL
+    description: ""
+    query: ""
+    sequenceNo: 2
+    references:
+      - alias: test-data-set_1
+        sqlReference: ""
+controlPort:
+  dataQualityRules: {}
+outputPort:
+  subscriptionChannels:
+    - channelType: JDBC
+      queryType: SQL
