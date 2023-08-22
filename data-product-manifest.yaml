@@ -1,10 +1,10 @@
 version: 0.1.0
-jobId: "660"
-jobName: Test_demo
+jobId: "1126"
+jobName: test kk1
 jobType: Source Aligned Data Product
 alias: ""
 discoveryPort:
-  name: Test_demo
+  name: test kk1
   description: ""
   category: ""
   image: https://google.com
@@ -21,13 +21,13 @@ discoveryPort:
     dataOrigin: ""
     monetaryInfo: ""
 inputPorts:
-  - alias: test-data-set_1
-    description: test-data-set
+  - alias: Test-DataSet-Anokhi_1
+    description: Test-DataSet-Anokhi
     tags: []
     extra: {}
     syncType: pull
     type: s3-csv
-    dataSetUrn: urn:dv:dataset:d6c0a3ce-8b37-4831-b460-43df14ee7fa5
+    dataSetUrn: urn:dv:dataset:b7f9a3b8-d1cf-43c8-b99d-e4fe24fe097b
     filter: ""
     projection: []
     dataProductUrn: ""
@@ -41,7 +41,7 @@ productState:
   retentionVersions: ""
   updateStrategy: ""
   logicalSchema: ""
-  enforceSchemaMethod: ""
+  enforceSchemaMethod: Warning
   enforceSchema: true
   enableDataReconciliation: false
   isProfilingEnabled: false
@@ -54,7 +54,7 @@ transformation:
     query: ""
     sequenceNo: 2
     references:
-      - alias: test-data-set_1
+      - alias: Test-DataSet-Anokhi_1
         sqlReference: ""
 controlPort:
   dataQualityRules: {}
