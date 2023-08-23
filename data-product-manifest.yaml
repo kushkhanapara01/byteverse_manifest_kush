@@ -30,7 +30,7 @@ inputPorts:
     dataSetUrn: ""
     filter: ""
     projection: []
-    dataProductUrn: urn:dv:dataproduct:7da5cbd8-bc24-4d50-a359-e0175e7ef462
+    dataProductUrn: urn:dv:dataproduct:1213d411-e2d3-4684-932b-8b8c06f61cfc
     persistDataFrame: false
     entity:
       advanceOptions:
