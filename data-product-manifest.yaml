@@ -21,23 +21,11 @@ inputPorts:
     tags: []
     extra: {}
     syncType: pull
-    dataSetUrn: ""
-    filter: ""
-    projection: []
-    dataProductUrn: urn:dv:dataproduct:1213d411-e2d3-4684-932b-8b8c06f61cfc
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: false
-  - alias: Load_all_data_12
-    description: Read secondary sales data
-    tags: []
-    extra: {}
-    syncType: pull
     type: dataproduct
     dataSetUrn: ""
     filter: ""
     projection: []
+    dataProductUrn: urn:dv:dataproduct:1213d411-e2d3-4684-932b-8b8c06f61cfc
     persistDataFrame: false
     entity:
       advanceOptions:
