@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "1171"
 jobName: Secondary Sales snapshot
 jobType: Curated Data Product
-alias: Load_state_level_data1
+alias: Load_state_level_data11
 discoveryPort:
-  name: Secondary Sales snapshot
+  name: Secondary Sales snapshot1
   description: ""
   category: ""
   image: https://google.com
