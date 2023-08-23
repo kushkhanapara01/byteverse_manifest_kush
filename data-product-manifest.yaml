@@ -13,13 +13,13 @@ discoveryPort:
   extra: {}
   shortDescription: Short Description
   longDescription: Long Long Long Description
-  industryDomain: ""
-  function: ""
+  industryDomain: "jsabdsa"
+  function: "asdasd"
   regulatoryFields:
-    dataPrivacy: ""
-    customerInfo: ""
-    dataOrigin: ""
-    monetaryInfo: ""
+    dataPrivacy: "public"
+    customerInfo: "PII"
+    dataOrigin: "humanGenerated"
+    monetaryInfo: "nonFinancialData"
 inputPorts:
   - alias: Load_all_data_1
     description: Read secondary sales data
