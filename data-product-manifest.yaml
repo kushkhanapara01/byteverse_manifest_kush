@@ -16,10 +16,10 @@ discoveryPort:
   industryDomain: "jsabdsa"
   function: "asdasd"
   regulatoryFields:
-    dataPrivacy: "public"
-    customerInfo: "PII"
-    dataOrigin: "humanGenerated"
-    monetaryInfo: "nonFinancialData"
+    dataPrivacy: ""
+    customerInfo: ""
+    dataOrigin: ""
+    monetaryInfo: ""
 inputPorts:
   - alias: Load_all_data_1
     description: Read secondary sales data
