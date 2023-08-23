@@ -1,10 +1,10 @@
 version: 0.1.0
-jobId: "1126"
-jobName: test kk1
-jobType: Source Aligned Data Product
-alias: ""
+jobId: "1171"
+jobName: Secondary Sales snapshot
+jobType: Curated Data Product
+alias: Load_state_level_data1
 discoveryPort:
-  name: test kk1
+  name: Secondary Sales snapshot
   description: ""
   category: ""
   image: https://google.com
@@ -21,43 +21,64 @@ discoveryPort:
     dataOrigin: ""
     monetaryInfo: ""
 inputPorts:
-  - alias: Test-DataSet-Anokhi_1
-    description: Test-DataSet-Anokhi
+  - alias: Load_all_data_1
+    description: Read secondary sales data
     tags: []
     extra: {}
     syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:b7f9a3b8-d1cf-43c8-b99d-e4fe24fe097b
+    type: dataproduct
+    dataSetUrn: ""
     filter: ""
     projection: []
-    dataProductUrn: ""
+    dataProductUrn: urn:dv:dataproduct:7da5cbd8-bc24-4d50-a359-e0175e7ef462
     persistDataFrame: false
     entity:
       advanceOptions:
         mergeSchema: false
 productState:
-  alias: ""
-  refreshInterval: ""
+  alias: Load_state_level_data
+  refreshInterval: 0 0 31 2 *
   retentionVersions: ""
-  updateStrategy: ""
-  logicalSchema: ""
+  updateStrategy: Overwrite
+  logicalSchema:
+    properties:
+      statename:
+        type: STRING
+        description: ""
+      town:
+        type: STRING
+        description: ""
+      billdate:
+        type: DATETIME
+        description: ""
+      salesvalue:
+        type: STRING
+        description: ""
   enforceSchemaMethod: Warning
   enforceSchema: true
   enableDataReconciliation: false
-  isProfilingEnabled: false
-  tableName: ""
+  isProfilingEnabled: true
+  tableName: secondary_sales_town_level
   stateStoreType: iceberg
 transformation:
   - alias: Spark_SQL_1
     type: SQL
-    description: ""
-    query: ""
+    description: Select data on state and city level for sales value
+    query: select statename,town,billdate,sum(salesvalue) as salesvalue from
+      secondary_sales group by 1,2,3
     sequenceNo: 2
     references:
-      - alias: Test-DataSet-Anokhi_1
-        sqlReference: ""
+      - alias: Load_all_data_1
+        sqlReference: secondary_sales
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: statename
+            expression: ==
+            number: 1
+        referenceAlias: Load_state_level_data
 outputPort:
   subscriptionChannels:
     - channelType: JDBC
