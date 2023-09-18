@@ -313,3 +313,5 @@ outputPort:
   subscriptionChannels:
     - channelType: JDBC
       queryType: SQL
+    - channelType: Dataproduct
+      queryType: SQL
