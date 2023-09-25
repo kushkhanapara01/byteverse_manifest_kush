@@ -4,61 +4,61 @@ jobName: test kk1
 jobType: Source Aligned Data Product
 alias: asdsad
 discoveryPort:
-    name: test kk1
+  name: test kk1
 inputPorts:
-    - alias: Test-DataSet-Anokhi_1
-      description: Test-DataSet-Anokhi
-      tags: []
-      extra: {}
-      syncType: pull
-      type: s3-csv
-      dataSetUrn: ""
-      filter: ""
-      projection: []
-      dataProductUrn: ""
-      persistDataFrame: false
-      entity:
-          advanceOptions:
-              mergeSchema: false
-    - alias: S3_Data_Set_Parquet_With_More_Variables_1
-      description: S3 Data Set Parquet With More Variables
-      tags: []
-      extra: {}
-      syncType: pull
-      type: s3-parquet
-      dataSetUrn: urn:dv:dataset:fd4b0582-4c8d-422b-b948-2e515dec63e2
-      filter: ""
-      projection: []
-      persistDataFrame: false
-      entity:
-          advanceOptions:
-              mergeSchema: true
+  - alias: S3_Data_Set_Parquet_With_More_Variables_1
+    description: S3 Data Set Parquet With More Variables
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-parquet
+    dataSetUrn: urn:dv:dataset:fd4b0582-4c8d-422b-b948-2e515dec63e2
+    filter: ""
+    projection: []
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: true
+  - alias: S3_Data_Set_CSV_1
+    description: S3 Data Set CSV
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:ed99e7b6-5f98-4c19-989c-5031aae66a5a
+    filter: ""
+    projection: []
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: false
 productState:
-    stepName: asdsad
-    inputDataFrame: EMR_PySpark_1
-    tableName: asdasd
-    warehousePath: asdasdas
-    catalogName: asdasdasd
-    writeMode: Overwrite
-    stateType: inputParquet
-    stateName: ""
-    optional:
-        encodingType: HASH
-        persistDataFrame: false
-    type: stateManagement
-    sequence: 4
+  stepName: asdsad
+  inputDataFrame: EMR_PySpark_1
+  tableName: asdasd
+  warehousePath: asdasdas
+  catalogName: asdasdasd
+  writeMode: Overwrite
+  stateType: inputParquet
+  stateName: ""
+  optional:
+    encodingType: HASH
+    persistDataFrame: false
+  type: stateManagement
+  sequence: 4
+  refreshInterval: "* * * 2 *"
 transformation:
-    - stepName: asdasdas
-      arguments:
-          - s3://##var1##/##var2##/test/##var3##/##var4##
-          - s3://byte-etl-externaldemo/weather_data/##dateInter##.csv
-      pythonFilePath: asdadasd
-      optional: {}
-      type: customPySparkEMRServerless
-      sequence: 3
+  - stepName: asdasdas
+    arguments:
+      - s3://##var1##/##var2##/test/##var3##/##var4##
+      - s3://normal_path
+    pythonFilePath: asdadasd
+    optional: {}
+    type: customPySparkEMRServerless
+    sequence: 3
 controlPort:
-    dataQualityRules: {}
+  dataQualityRules: {}
 outputPort:
-    subscriptionChannels:
-        - channelType: Postgres
-          queryType: SQL
+  subscriptionChannels:
+    - channelType: Postgres
+      queryType: SQL
