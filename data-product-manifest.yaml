@@ -34,7 +34,7 @@ inputPorts:
         mergeSchema: false
 productState:
   stepName: asdsad
-  inputDataFrame: EMR_PySpark_1
+  inputDataFrame: Databricks_PySpark_1
   tableName: asdasd
   warehousePath: asdasdas
   catalogName: asdasdasd
@@ -43,6 +43,15 @@ productState:
   stateName: asdsa
   optional:
     encodingType: HASH
+    columnsToEncode:
+      - aasd
+    partitionColumns:
+      - aasd
+    primaryKey:
+      - aasdas
+    changeTrackingColumns:
+      - aasdsa
+    timestampColumn: asdasd
     persistDataFrame: false
     dataProfiling:
       enable: true
@@ -50,15 +59,18 @@ productState:
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
+  logicalSchema: {}
   refreshInterval: "* * * 2 *"
 transformation:
-  - stepName: asdasdas
+  - stepName: asdasd
     arguments:
-      - s3://##var1##/##var2##/test/##var3##/##var4##
       - s3://normal_path
-    pythonFilePath: ""
-    optional: {}
-    type: customPySparkEMRServerless
+      - s3://##var1##/##var2##/test/##var3##/##var4##
+    pythonFilePath: asdasd
+    optional:
+      dependencies:
+        - aasdasd
+    type: customPySparkDatabricks
     sequence: 3
 controlPort:
   dataQualityRules: {}
