@@ -50,7 +50,6 @@ productState:
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
-  logicalSchema: {}
   refreshInterval: "* * * 2 *"
 transformation:
   - stepName: asdasdas
