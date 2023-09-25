@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "1126"
 jobName: test kk1
 jobType: Source Aligned Data Product
-alias: asdsad
+alias: asdsadsda
 discoveryPort:
-  name: test kk1
+  name: test kk1a
 inputPorts:
   - alias: S3_Data_Set_Parquet_With_More_Variables_1
     description: S3 Data Set Parquet With More Variables
