@@ -51,6 +51,7 @@ productState:
   sequence: 4
   updateStrategy: Overwrite
   refreshInterval: "* * * 2 *"
+  logicalSchema: ''
 transformation:
   - stepName: asdasdas
     arguments:
