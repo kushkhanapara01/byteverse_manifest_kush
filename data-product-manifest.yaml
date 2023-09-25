@@ -49,6 +49,7 @@ productState:
       tableId: 1
   type: stateManagement
   sequence: 4
+  updateStrategy: Overwrite
   refreshInterval: "* * * 2 *"
 transformation:
   - stepName: asdasdas
