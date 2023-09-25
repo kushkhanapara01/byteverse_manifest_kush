@@ -50,14 +50,14 @@ productState:
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
-  refreshInterval: "* * * 2 *"
   logicalSchema: {}
+  refreshInterval: "* * * 2 *"
 transformation:
   - stepName: asdasdas
     arguments:
       - s3://##var1##/##var2##/test/##var3##/##var4##
       - s3://normal_path
-    pythonFilePath: asdadasd
+    pythonFilePath: ""
     optional: {}
     type: customPySparkEMRServerless
     sequence: 3
