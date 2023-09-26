@@ -1,24 +1,24 @@
 version: 0.1.0
-jobId: "1126"
-jobName: test kk1
+jobId: "1211"
+jobName: testkk1234
 jobType: Source Aligned Data Product
-alias: asdsadsda
+alias: asdas
 discoveryPort:
-  name: test kk1a
+  name: testkk1234
 inputPorts:
-  - alias: S3_Data_Set_Parquet_With_More_Variables_1
-    description: S3 Data Set Parquet With More Variables
+  - alias: weather_day_1
+    description: weather day
     tags: []
     extra: {}
     syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:fd4b0582-4c8d-422b-b948-2e515dec63e2
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:3a0494b4-86e9-430f-afcb-877a0d9bea95
     filter: ""
     projection: []
     persistDataFrame: false
     entity:
       advanceOptions:
-        mergeSchema: true
+        mergeSchema: false
   - alias: S3_Data_Set_CSV_1
     description: S3 Data Set CSV
     tags: []
@@ -33,45 +33,37 @@ inputPorts:
       advanceOptions:
         mergeSchema: false
 productState:
-  stepName: asdsad
-  inputDataFrame: Databricks_PySpark_1
-  tableName: asdasd
-  warehousePath: asdasdas
-  catalogName: asdasdasd
+  stepName: asdas
+  inputDataFrame: EMR_PySpark_1
+  tableName: asdas
+  warehousePath: asdasd
+  catalogName: asdsadsa
   writeMode: Overwrite
   stateType: inputParquet
-  stateName: asdsa
+  stateName: asdas
   optional:
     encodingType: HASH
-    columnsToEncode:
-      - aasd
-    partitionColumns:
-      - aasd
-    primaryKey:
-      - aasdas
-    changeTrackingColumns:
-      - aasdsa
-    timestampColumn: asdasd
     persistDataFrame: false
-    dataProfiling:
-      enable: true
-      tableId: 1
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
-  logicalSchema: {}
-  refreshInterval: "* * * 2 *"
+  refreshInterval: " * * * 2 *"
 transformation:
-  - stepName: asdasd
+  - stepName: asdas
     arguments:
+      - s3://byte-etl-externaldemo/weather_data/20230626110117.csv
       - s3://normal_path
-      - s3://##var1##/##var2##/test/##var3##/##var4##
     pythonFilePath: asdasd
+    inputDataFrameList:
+      - tempViewName: k1
+      - tempViewName: k2
     optional:
-      dependencies:
-        - aasdasd
-    type: customPySparkDatabricks
+      pythonExtraZipFilePath: asda
+    type: customPySparkEMRServerless
     sequence: 3
+    references:
+      - sqlReference: k1
+      - sqlReference: k2
 controlPort:
   dataQualityRules: {}
 outputPort:
