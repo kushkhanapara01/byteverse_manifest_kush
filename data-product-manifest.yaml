@@ -47,23 +47,27 @@ productState:
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
-  refreshInterval: " * * * 2 *"
+  refreshInterval: "* * * 2 *"
 transformation:
-  - stepName: asdas
+  - stepName: kk1asd
     arguments:
       - s3://byte-etl-externaldemo/weather_data/20230626110117.csv
       - s3://normal_path
     pythonFilePath: asdasd
     inputDataFrameList:
-      - tempViewName: k1
-      - tempViewName: k2
+      - inputDataFrame: weather$day$1
+        tempViewName: kk1
+      - inputDataFrame: S3$Data$Set$CSV$1
+        tempViewName: kk2
     optional:
       pythonExtraZipFilePath: asda
     type: customPySparkEMRServerless
     sequence: 3
     references:
-      - sqlReference: k1
-      - sqlReference: k2
+      - alias: weather_day_1
+        sqlReference: kk1
+      - alias: S3_Data_Set_CSV_1
+        sqlReference: kk2
 controlPort:
   dataQualityRules: {}
 outputPort:
