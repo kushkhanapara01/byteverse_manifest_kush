@@ -1,10 +1,10 @@
 version: 0.1.0
-jobId: "1211"
-jobName: testkk1234
+jobId: "1216"
+jobName: test1234567
 jobType: Source Aligned Data Product
-alias: asdas
+alias: sadsa
 discoveryPort:
-  name: testkk1234
+  name: test1234567
 inputPorts:
   - alias: weather_day_1
     description: weather day
@@ -19,13 +19,13 @@ inputPorts:
     entity:
       advanceOptions:
         mergeSchema: false
-  - alias: S3_Data_Set_CSV_1
-    description: S3 Data Set CSV
+  - alias: Test-DataSet-Anokhi_1
+    description: Test-DataSet-Anokhi
     tags: []
     extra: {}
     syncType: pull
     type: s3-csv
-    dataSetUrn: urn:dv:dataset:ed99e7b6-5f98-4c19-989c-5031aae66a5a
+    dataSetUrn: urn:dv:dataset:b7f9a3b8-d1cf-43c8-b99d-e4fe24fe097b
     filter: ""
     projection: []
     persistDataFrame: false
@@ -33,42 +33,43 @@ inputPorts:
       advanceOptions:
         mergeSchema: false
 productState:
-  stepName: asdas
+  stepName: sadsa
   inputDataFrame: EMR_PySpark_1
   tableName: asdas
-  warehousePath: asdasd
-  catalogName: asdsadsa
+  warehousePath: saddas
+  catalogName: adasd
   writeMode: Overwrite
   stateType: inputParquet
-  stateName: asdas
+  stateName: asdasd
   optional:
     encodingType: HASH
     persistDataFrame: false
   type: stateManagement
   sequence: 4
   updateStrategy: Overwrite
-  refreshInterval: "* * * 2 *"
+  refreshInterval: "* * * 2 2"
 transformation:
-  - stepName: kk1asd
+  - alias: EMR_PySpark_1
+    stepName: adasd
     arguments:
       - s3://byte-etl-externaldemo/weather_data/20230626110117.csv
-      - s3://normal_path
-    pythonFilePath: python filepath
+      - s3://byte-etl-externaldemo/##weather_data##/##11##/##123##/##1234##/##dateInter##.csv
+    pythonFilePath: asdasda
     inputDataFrameList:
       - inputDataFrame: weather$day$1
-        tempViewName: kk1
-      - inputDataFrame: S3$Data$Set$CSV$1
-        tempViewName: kk2
+        tempViewName: ""
+      - inputDataFrame: Test-DataSet-Anokhi$1
+        tempViewName: ""
     optional:
-      pythonExtraZipFilePath: asda
-      pythonEnvTarGZPath: python targz
+      pythonExtraZipFilePath: asdasd
+      pythonEnvTarGZPath: sasdasdas
     type: customPySparkEMRServerless
     sequence: 3
     references:
       - alias: weather_day_1
-        sqlReference: kk1
-      - alias: S3_Data_Set_CSV_1
-        sqlReference: kk2
+        sqlReference: ""
+      - alias: Test-DataSet-Anokhi_1
+        sqlReference: ""
 controlPort:
   dataQualityRules: {}
 outputPort:
