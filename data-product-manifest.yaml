@@ -53,7 +53,7 @@ transformation:
     arguments:
       - s3://byte-etl-externaldemo/weather_data/20230626110117.csv
       - s3://normal_path
-    pythonFilePath: asdasd
+    pythonFilePath: python filepath
     inputDataFrameList:
       - inputDataFrame: weather$day$1
         tempViewName: kk1
@@ -61,6 +61,7 @@ transformation:
         tempViewName: kk2
     optional:
       pythonExtraZipFilePath: asda
+      pythonEnvTarGZPath: python targz
     type: customPySparkEMRServerless
     sequence: 3
     references:
