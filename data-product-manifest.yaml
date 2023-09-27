@@ -19,7 +19,7 @@ inputPorts:
     entity:
       advanceOptions:
         mergeSchema: false
-  - alias: Test-DataSet-Anokhi_1
+  - alias: Test_DataSet_Anokhi_1
     description: Test-DataSet-Anokhi
     tags: []
     extra: {}
