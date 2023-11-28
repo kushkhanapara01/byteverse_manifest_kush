@@ -2,7 +2,7 @@ version: 0.0.1
 jobId: "175"
 jobName: Weather API Daily copy
 jobType: Source Aligned Data Product
-alias: Load_final_weather_data_daily
+alias: Load_final_weather_data_daily_1
 discoveryPort:
   name: Weather API Daily copy
 inputPorts:
@@ -21,7 +21,7 @@ inputPorts:
         mergeSchema: false
 productState:
   isDynamic: true
-  alias: Load_final_weather_data_daily
+  alias: Load_final_weather_data_daily_1
   retentionVersions: ""
   logicalSchema:
     properties:
