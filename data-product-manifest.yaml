@@ -32,7 +32,7 @@ inputPorts:
         mergeSchema: false
 productState:
   alias: Load_state_level_data
-  refreshInterval: */5 * * * *
+  refreshInterval: * 5 * * * *
   retentionVersions: ""
   updateStrategy: Overwrite
   logicalSchema:
