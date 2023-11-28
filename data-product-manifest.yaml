@@ -31,7 +31,7 @@ inputPorts:
       advanceOptions:
         mergeSchema: false
 productState:
-  alias: Load_state_level_data
+  alias: Load_state_level_data1
   refreshInterval: * * 28 11 *
   retentionVersions: ""
   updateStrategy: Overwrite
