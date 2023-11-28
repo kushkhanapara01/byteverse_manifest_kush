@@ -1,82 +1,152 @@
-version: 0.1.0
-jobId: "1171"
-jobName: Secondary Sales snapshot
-jobType: Curated Data Product
-alias: Load_state_level_data11
+version: 0.0.1
+jobId: "175"
+jobName: Weather API Daily copy
+jobType: Source Aligned Data Product
+alias: Load_final_weather_data_daily
 discoveryPort:
-  name: Secondary Sales snapshot1
-  description: ""
-  category: ""
-  image: https://google.com
-  autofillUserinfo: ""
-  tags: []
-  extra: {}
-  shortDescription: Short Description
-  longDescription: Long Long Long Description
-  industryDomain: "jsabdsa"
-  function: "asdasd"
+  name: Weather API Daily copy
 inputPorts:
-  - alias: Load_all_data_1
-    description: Read secondary sales data
+  - alias: Weather_2
+    description: Weather
     tags: []
     extra: {}
     syncType: pull
-    type: dataproduct
-    dataSetUrn: ""
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:f4814824-5819-44ba-ac1d-4dc9a279a58a
     filter: ""
     projection: []
-    dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
     persistDataFrame: false
     entity:
       advanceOptions:
         mergeSchema: false
 productState:
-  alias: Load_state_level_data1
-  refreshInterval: * * 28 11 *
+  isDynamic: true
+  alias: Load_final_weather_data_daily
   retentionVersions: ""
-  updateStrategy: Overwrite
   logicalSchema:
     properties:
-      statename:
+      City:
         type: STRING
         description: ""
-      town:
+      Region:
         type: STRING
         description: ""
-      billdate:
-        type: DATETIME
-        description: ""
-      salesvalue:
+      Country:
         type: STRING
         description: ""
-  enforceSchemaMethod: Warning
-  enforceSchema: true
-  enableDataReconciliation: false
-  isProfilingEnabled: true
-  tableName: secondary_sales_town_level
-  stateStoreType: iceberg
+      Latitude:
+        type: STRING
+        description: ""
+      Longitude:
+        type: STRING
+        description: ""
+      Timezone:
+        type: STRING
+        description: ""
+      Local Time:
+        type: STRING
+        description: ""
+      Cloud ID:
+        type: STRING
+        description: ""
+      Feels like Celcius:
+        type: STRING
+        description: ""
+      Feels like fahrenheit:
+        type: STRING
+        description: ""
+      Gust speed in kph:
+        type: STRING
+        description: ""
+      Gust speed in mph:
+        type: STRING
+        description: ""
+      Humidity:
+        type: STRING
+        description: ""
+      Is day time?:
+        type: STRING
+        description: ""
+      Last update:
+        type: STRING
+        description: ""
+      Last updated time in epoch:
+        type: STRING
+        description: ""
+      Precipitation in inch:
+        type: STRING
+        description: ""
+      Precipitation in mm:
+        type: STRING
+        description: ""
+      Pressure:
+        type: STRING
+        description: ""
+      Precipitation in mb:
+        type: STRING
+        description: ""
+      Temperature in celcius:
+        type: STRING
+        description: ""
+      Temperature in fahrenheit:
+        type: STRING
+        description: ""
+      UV:
+        type: STRING
+        description: ""
+      Visibility in km:
+        type: STRING
+        description: ""
+      Visibility in miles:
+        type: STRING
+        description: ""
+      Wind Degree:
+        type: STRING
+        description: ""
+      Wind Direction:
+        type: STRING
+        description: ""
+      Wind in kph:
+        type: STRING
+        description: ""
+      Wind in mph:
+        type: STRING
+        description: ""
+  stateStoreType: loadDataIceberg
+  isProfilingEnabled: false
+  updateStrategy: Append
+  tableName: s3Source.weather_daily
+  warehousePath: s3://bp-spark-sql-library-test-acc/
+  catalogName: s3Source
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: glue
+  refreshInterval: "* * 28 11 *"
 transformation:
   - alias: Spark_SQL_1
     type: SQL
-    description: Select data on state and city level for sales value
-    query: select statename,town,billdate,sum(salesvalue) as salesvalue from
-      secondary_sales group by 1,2,3
+    description: Read all data
+    query: select * from weather
     sequenceNo: 2
     references:
-      - alias: Load_all_data_1
-        sqlReference: secondary_sales
+      - alias: Weather_2
+        sqlReference: weather
 controlPort:
   dataQualityRules:
     NullValueCheck:
       productState:
         checks:
-          - column: statename
+          - column: City
             expression: ==
             number: 1
-        referenceAlias: Load_state_level_data
+          - column: Country
+            expression: ==
+            number: 1
+        referenceAlias: Load_final_weather_data_daily
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
-      queryType: SQL
-    - channelType: Dataproduct
+    - channelType: Postgres
       queryType: SQL
