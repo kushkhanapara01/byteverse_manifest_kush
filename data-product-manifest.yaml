@@ -50,7 +50,8 @@ productState:
     enableDataReconciliation: false
     enforceSchema: false
     timestampColumn: abc
-    primaryKey: bcsa
+    primaryKey: 
+      - bcas
   refreshInterval: None
 transformation:
   - alias: Spark_SQL_1
