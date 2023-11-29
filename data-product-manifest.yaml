@@ -49,6 +49,8 @@ productState:
     addRunIdColumn: false
     enableDataReconciliation: false
     enforceSchema: false
+    timestampColumn: abc
+    primaryKey: bcsa
   refreshInterval: None
 transformation:
   - alias: Spark_SQL_1
