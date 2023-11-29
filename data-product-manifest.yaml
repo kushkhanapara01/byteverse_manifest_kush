@@ -31,6 +31,20 @@ productState:
   tableName: asdas
   endPoint: asdasd
   temporaryPathS3: ""
+  logicalSchema:
+    properties:
+      DNID:
+        type: STRING
+      DNName:
+        type: STRING
+      NEName:
+        type: STRING
+      InitTime:
+        type: STRING
+      State:
+        type: STRING
+      City:
+        type: STRING
   optional:
     persistDataFrame: false
     addRunIdColumn: false
