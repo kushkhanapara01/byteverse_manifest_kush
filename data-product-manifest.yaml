@@ -23,7 +23,6 @@ productState:
   isDynamic: true
   alias: asdas
   retentionVersions: ""
-  logicalSchema: ""
   stateStoreType: writeDataFrameToRedshiftTable
   isProfilingEnabled: false
   updateStrategy: Truncate
