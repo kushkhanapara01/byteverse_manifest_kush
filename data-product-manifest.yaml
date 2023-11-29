@@ -44,6 +44,8 @@ productState:
         type: STRING
       City:
         type: STRING
+  accessKey: asd
+  secretKey: asdasd
   optional:
     persistDataFrame: false
     addRunIdColumn: false
