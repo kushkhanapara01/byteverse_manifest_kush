@@ -1,55 +1,52 @@
-version: 0.1.0
-jobId: "9"
-jobName: Weather API Curated Test1
-jobType: Curated Data Product
-alias: Store_final_state1
+version: 0.0.3
+jobId: "24"
+jobName: test-db-red
+jobType: DataSets
+alias: ""
 discoveryPort:
-  name: Weather API Curated Test1
-  description: ""
-  category: ""
-  image: https://google.com
-  autofillUserinfo: ""
-  tags: []
-  extra: {}
+  name: test-db-red
 inputPorts:
-  - alias: Load_final_state_1
-    description: ""
-    tags: []
-    extra: {}
-    syncType: pull
-    type: dataproduct
-    filter: ""
-    projection:
-      - ""
-    dataProductUrn: urn:dv:dataproduct:4a94ef6b-f495-4294-ad62-0779932f1949
-    persistDataFrame: false
+  - alias: Parquet_1
+    isDynamic: true
+    path: ""
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        mergeSchema: true
+      enableDataReconciliation: false
+      enforceSchema: false
+      dataSetUrn: ""
+      dataProductUrn: ""
+    type: inputParquet
 productState:
-  alias: Store_final_state
-  refreshInterval: ""
+  isDynamic: true
+  alias: ""
   retentionVersions: ""
-  updateStrategy: Overwrite
-  logicalSchema:
-    properties:
-      a:
-        type: STRING
-      b:
-        type: STRING
-  enforceSchemaMethod: ""
-  enforceSchema: true
+  logicalSchema: ""
+  stateStoreType: loadDataIceberg
   isProfilingEnabled: false
-  tableName: weather_curated_dataproduct
-  stateStoreType: iceberg
+  tableName: ""
+  warehousePath: ""
+  catalogName: ""
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: glue
+  refreshInterval: "* * * * *"
 transformation:
   - alias: Spark_SQL_1
     type: SQL
-    description: Select all data
-    query: select * from weather
+    description: ""
+    query: ""
+    sequenceNo: 2
     references:
-      - alias: Load_final_state_1
-        sqlReference: weather
+      - alias: Parquet_1
+        sqlReference: ""
 controlPort:
   dataQualityRules: {}
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
+    - channelType: Postgres
       queryType: SQL
