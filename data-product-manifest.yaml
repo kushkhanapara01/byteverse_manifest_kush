@@ -1,10 +1,10 @@
-version: 0.0.2
-jobId: "30"
-jobName: TestKK
+version: 0.0.1
+jobId: "32"
+jobName: testJob_kk
 jobType: DataSets
 alias: ""
 discoveryPort:
-  name: TestKK
+  name: testJob_kk
 inputPorts:
   - alias: Parquet_1
     isDynamic: true
@@ -34,7 +34,7 @@ productState:
     enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: glue
-  refreshInterval: "* * * 7 5"
+  refreshInterval: "* * 7 8 *"
 transformation:
   - alias: Spark_SQL_1
     type: SQL
