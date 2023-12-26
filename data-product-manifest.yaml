@@ -1,10 +1,10 @@
-version: 0.0.2
-jobId: "25"
-jobName: axiomtest-db
+version: 0.0.1
+jobId: "15"
+jobName: test
 jobType: DataSets
 alias: ""
 discoveryPort:
-  name: axiomtest-db
+  name: test
 inputPorts:
   - alias: Parquet_1
     isDynamic: true
@@ -34,7 +34,7 @@ productState:
     enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: glue
-  refreshInterval: "* * * 7 7"
+  refreshInterval: "* * * 6 7"
 transformation:
   - alias: Spark_SQL_1
     type: SQL
