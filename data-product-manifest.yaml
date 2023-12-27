@@ -29,6 +29,7 @@ productState:
   refreshInterval: ""
   retentionVersions: ""
   updateStrategy: overwrite
+  temporaryPath: "abc"
   logicalSchema:
     properties:
       a:
