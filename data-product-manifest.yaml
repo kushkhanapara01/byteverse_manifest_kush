@@ -1,5 +1,6 @@
 version: 0.1.0
 jobId: "9"
+timeout: 5
 jobName: Weather API Curated Test
 jobType: Curated Data Product
 alias: Store_final_state22
