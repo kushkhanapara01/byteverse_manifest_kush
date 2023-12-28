@@ -28,6 +28,7 @@ productState:
   tableName: asdads
   warehousePath: asdds
   catalogName: asad
+  temporaryPath: "abc"
   logicalSchema:
     properties:
       a:
