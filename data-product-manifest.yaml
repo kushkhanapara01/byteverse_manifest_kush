@@ -21,7 +21,6 @@ productState:
   isDynamic: true
   alias: adas
   retentionVersions: ""
-  logicalSchema: ""
   stateStoreType: loadDataIceberg
   isProfilingEnabled: false
   updateStrategy: Overwrite
