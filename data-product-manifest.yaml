@@ -28,6 +28,12 @@ productState:
   tableName: asdads
   warehousePath: asdds
   catalogName: asad
+  logicalSchema:
+    properties:
+      a:
+        type: STRING
+      b:
+        type: STRING
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
