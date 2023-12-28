@@ -2,7 +2,8 @@ version: 0.0.1
 timeout: 5
 jobId: undefined
 alias: adas
-discoveryPort: {}
+discoveryPort: 
+  name: test dp kk
 inputPorts:
   - alias: Parquet_1
     isDynamic: true
