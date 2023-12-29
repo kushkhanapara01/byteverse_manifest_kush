@@ -32,9 +32,17 @@ productState:
   temporaryPath: "abc"
   logicalSchema:
     properties:
-      a:
+      DNID:
         type: STRING
-      b:
+      DNName:
+        type: STRING
+      NEName:
+        type: STRING
+      InitTime:
+        type: STRING
+      State:
+        type: STRING
+      City:
         type: STRING
   enforceSchemaMethod: ""
   enforceSchema: true
