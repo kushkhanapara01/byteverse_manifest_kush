@@ -35,148 +35,148 @@ productState:
       City:
         type: STRING
         description: abcadasda
-        source_column: abc1
-        source_table: table1
+        sourceColumn: abc1
+        sourceTable: table1
       Region:
         type: STRING
         description: ""
-        source_column: abc2
-        source_table: table2
+        sourceColumn: abc2
+        sourceTable: table2
       Country:
         type: STRING
         description: ""
-        source_column: abc3
-        source_table: table3
+        sourceColumn: abc3
+        sourceTable: table3
       Latitude:
         type: STRING
         description: ""
-        source_column: abc4
-        source_table: table4
+        sourceColumn: abc4
+        sourceTable: table4
       Longitude:
         type: STRING
         description: ""
-        source_column: abc5
-        source_table: table5
+        sourceColumn: abc5
+        sourceTable: table5
       Timezone:
         type: STRING
         description: ""
-        source_column: abc6
-        source_table: table6
+        sourceColumn: abc6
+        sourceTable: table6
       Local Time:
         type: STRING
         description: ""
-        source_column: abc7
-        source_table: table7
+        sourceColumn: abc7
+        sourceTable: table7
       Cloud ID:
         type: STRING
         description: ""
-        source_column: abc8
-        source_table: table8
+        sourceColumn: abc8
+        sourceTable: table8
       Feels like Celsius:
         type: STRING
         description: ""
-        source_column: abc9
-        source_table: table9
+        sourceColumn: abc9
+        sourceTable: table9
       Feels like Fahrenheit:
         type: STRING
         description: ""
-        source_column: abc10
-        source_table: table10
+        sourceColumn: abc10
+        sourceTable: table10
       Gust speed in kph:
         type: STRING
         description: ""
-        source_column: abc11
-        source_table: table11
+        sourceColumn: abc11
+        sourceTable: table11
       Gust speed in mph:
         type: STRING
         description: ""
-        source_column: abc12
-        source_table: table12
+        sourceColumn: abc12
+        sourceTable: table12
       Humidity:
         type: STRING
         description: ""
-        source_column: abc13
-        source_table: table13
+        sourceColumn: abc13
+        sourceTable: table13
       Is day time?:
         type: STRING
         description: ""
-        source_column: abc14
-        source_table: table14
+        sourceColumn: abc14
+        sourceTable: table14
       Last update:
         type: STRING
         description: ""
-        source_column: abc15
-        source_table: table15
+        sourceColumn: abc15
+        sourceTable: table15
       Last updated time in epoch:
         type: STRING
         description: ""
-        source_column: abc16
-        source_table: table16
+        sourceColumn: abc16
+        sourceTable: table16
       Precipitation in inch:
         type: STRING
         description: ""
-        source_column: abc17
-        source_table: table17
+        sourceColumn: abc17
+        sourceTable: table17
       Precipitation in mm:
         type: STRING
         description: ""
-        source_column: abc18
-        source_table: table18
+        sourceColumn: abc18
+        sourceTable: table18
       Pressure:
         type: STRING
         description: ""
-        source_column: abc19
-        source_table: table19
+        sourceColumn: abc19
+        sourceTable: table19
       Precipitation in mb:
         type: STRING
         description: ""
-        source_column: abc20
-        source_table: table20
+        sourceColumn: abc20
+        sourceTable: table20
       Temperature in Celsius:
         type: STRING
         description: ""
-        source_column: abc21
-        source_table: table21
+        sourceColumn: abc21
+        sourceTable: table21
       Temperature in Fahrenheit:
         type: STRING
         description: ""
-        source_column: abc22
-        source_table: table22
+        sourceColumn: abc22
+        sourceTable: table22
       UV:
         type: STRING
         description: ""
-        source_column: abc23
-        source_table: table23
+        sourceColumn: abc23
+        sourceTable: table23
       Visibility in km:
         type: STRING
         description: ""
-        source_column: abc24
-        source_table: table24
+        sourceColumn: abc24
+        sourceTable: table24
       Visibility in miles:
         type: STRING
         description: ""
-        source_column: abc25
-        source_table: table25
+        sourceColumn: abc25
+        sourceTable: table25
       Wind Degree:
         type: STRING
         description: ""
-        source_column: abc26
-        source_table: table26
+        sourceColumn: abc26
+        sourceTable: table26
       Wind Direction:
         type: STRING
         description: ""
-        source_column: abc27
-        source_table: table27
+        sourceColumn: abc27
+        sourceTable: table27
       Wind in kph:
         type: STRING
         description: ""
-        source_column: abc28
-        source_table: table28
+        sourceColumn: abc28
+        sourceTable: table28
       Wind in mph:
         type: STRING
         description: ""
-        source_column: abc29
-        source_table: table29
+        sourceColumn: abc29
+        sourceTable: table29
   enforceSchemaMethod: ""
   enforceSchema: true
   updateStrategyOptions: {}
