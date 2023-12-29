@@ -34,16 +34,28 @@ productState:
     properties:
       DNID:
         type: STRING
+        source_column: abc1
+        source_table: xyz1
       DNName:
         type: STRING
+        source_column: abc2
+        source_table: xyz2
       NEName:
         type: STRING
+        source_column: abc3
+        source_table: xyz3
       InitTime:
         type: STRING
+        source_column: abc4
+        source_table: xyz4
       State:
         type: STRING
+        source_column: abc5
+        source_table: xyz5
       City:
         type: STRING
+        source_column: abc6
+        source_table: xyz6
   enforceSchemaMethod: ""
   enforceSchema: true
   updateStrategyOptions: {}
