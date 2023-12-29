@@ -32,30 +32,151 @@ productState:
   temporaryPath: "abc"
   logicalSchema:
     properties:
-      DNID:
-        type: STRING
-        source_column: abc1
-        source_table: xyz1
-      DNName:
-        type: STRING
-        source_column: abc2
-        source_table: xyz2
-      NEName:
-        type: STRING
-        source_column: abc3
-        source_table: xyz3
-      InitTime:
-        type: STRING
-        source_column: abc4
-        source_table: xyz4
-      State:
-        type: STRING
-        source_column: abc5
-        source_table: xyz5
       City:
         type: STRING
+        description: abcadasda
+        source_column: abc1
+        source_table: table1
+      Region:
+        type: STRING
+        description: ""
+        source_column: abc2
+        source_table: table2
+      Country:
+        type: STRING
+        description: ""
+        source_column: abc3
+        source_table: table3
+      Latitude:
+        type: STRING
+        description: ""
+        source_column: abc4
+        source_table: table4
+      Longitude:
+        type: STRING
+        description: ""
+        source_column: abc5
+        source_table: table5
+      Timezone:
+        type: STRING
+        description: ""
         source_column: abc6
-        source_table: xyz6
+        source_table: table6
+      Local Time:
+        type: STRING
+        description: ""
+        source_column: abc7
+        source_table: table7
+      Cloud ID:
+        type: STRING
+        description: ""
+        source_column: abc8
+        source_table: table8
+      Feels like Celsius:
+        type: STRING
+        description: ""
+        source_column: abc9
+        source_table: table9
+      Feels like Fahrenheit:
+        type: STRING
+        description: ""
+        source_column: abc10
+        source_table: table10
+      Gust speed in kph:
+        type: STRING
+        description: ""
+        source_column: abc11
+        source_table: table11
+      Gust speed in mph:
+        type: STRING
+        description: ""
+        source_column: abc12
+        source_table: table12
+      Humidity:
+        type: STRING
+        description: ""
+        source_column: abc13
+        source_table: table13
+      Is day time?:
+        type: STRING
+        description: ""
+        source_column: abc14
+        source_table: table14
+      Last update:
+        type: STRING
+        description: ""
+        source_column: abc15
+        source_table: table15
+      Last updated time in epoch:
+        type: STRING
+        description: ""
+        source_column: abc16
+        source_table: table16
+      Precipitation in inch:
+        type: STRING
+        description: ""
+        source_column: abc17
+        source_table: table17
+      Precipitation in mm:
+        type: STRING
+        description: ""
+        source_column: abc18
+        source_table: table18
+      Pressure:
+        type: STRING
+        description: ""
+        source_column: abc19
+        source_table: table19
+      Precipitation in mb:
+        type: STRING
+        description: ""
+        source_column: abc20
+        source_table: table20
+      Temperature in Celsius:
+        type: STRING
+        description: ""
+        source_column: abc21
+        source_table: table21
+      Temperature in Fahrenheit:
+        type: STRING
+        description: ""
+        source_column: abc22
+        source_table: table22
+      UV:
+        type: STRING
+        description: ""
+        source_column: abc23
+        source_table: table23
+      Visibility in km:
+        type: STRING
+        description: ""
+        source_column: abc24
+        source_table: table24
+      Visibility in miles:
+        type: STRING
+        description: ""
+        source_column: abc25
+        source_table: table25
+      Wind Degree:
+        type: STRING
+        description: ""
+        source_column: abc26
+        source_table: table26
+      Wind Direction:
+        type: STRING
+        description: ""
+        source_column: abc27
+        source_table: table27
+      Wind in kph:
+        type: STRING
+        description: ""
+        source_column: abc28
+        source_table: table28
+      Wind in mph:
+        type: STRING
+        description: ""
+        source_column: abc29
+        source_table: table29
   enforceSchemaMethod: ""
   enforceSchema: true
   updateStrategyOptions: {}
