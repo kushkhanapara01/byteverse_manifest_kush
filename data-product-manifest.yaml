@@ -3,7 +3,7 @@ jobId: "357"
 jobName: Test k crdp
 jobType: Consumption Ready Data Product
 requestDataproductID: ad987fee-76dc-48b8-b410-e8b90ae558a0
-alias: ""
+alias: "asdasdas"
 discoveryPort:
   name: Test k crdp
 inputPorts:
