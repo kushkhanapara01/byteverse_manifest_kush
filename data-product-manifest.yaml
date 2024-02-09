@@ -3,7 +3,9 @@ jobId: "9"
 timeout: 6
 jobName: Weather API Curated Test
 jobType: Curated Data Product
-alias: Store_final_state22
+requestDataproductID: ad987fee-76dc-48b8-b410-e8b90ae558a0
+alias: "asdasdas"
+domain: operation
 discoveryPort:
   name: Weather API Curated Test22
   description: ""
