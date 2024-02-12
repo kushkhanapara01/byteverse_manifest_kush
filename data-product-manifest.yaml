@@ -3,10 +3,10 @@ jobId: "9"
 timeout: 6
 jobName: Weather API Curated Test
 jobType: Curated Data Product
-alias: "asdasdas"
+alias: "asdasdasasdsadasd"
 domain: operation
 discoveryPort:
-  name: Weather API Curated kk
+  name: Weather API Curated kkk
   description: ""
   category: ""
   image: https://google.com
