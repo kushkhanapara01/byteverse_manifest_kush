@@ -6,7 +6,7 @@ requestDataproductID: ad987fee-76dc-48b8-b410-e8b90ae558a0
 alias: "asdasdas"
 domain: operation
 discoveryPort:
-  name: Test k crdp
+  name: Test k crdpasd
 inputPorts:
   - alias: onprim_read_csv_1
     isDynamic: true
