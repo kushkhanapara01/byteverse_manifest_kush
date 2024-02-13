@@ -4,7 +4,7 @@ jobName: test e2e kk
 jobType: Consumption Ready Data Product
 requestDataproductID: e32ed7ec-0e75-4f76-95cc-e864e0bb2b48
 domain: operations
-alias: "asdas"
+alias: "asdasncn"
 discoveryPort:
   name: test e2e kk
 inputPorts:
